@@ -20,19 +20,16 @@
             <p>あなたの読書記録をゆるく公開しましょう<br>　　読書で教養を深めていきましょう</p>
           </div>
           <% if user_signed_in? %>
-            <div class="navi_rightmost">
+            <div class="navi_right">
                <%= link_to "#{current_user.nickname}さん", "#" , class: :form_user %>
             </div>
             <div class="navi_right">
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :navi_btn %>
               <%= link_to "読了本紹介", '#', class: :navi_btn %>
             </div>
-            <!--<div class="navi_rightmost">
-               <%= link_to "#{current_user.nickname}さん", "#" , class: :form_user %>
-            </div> -->
           <% else %>
             <div class="navi_right">
-              <%= link_to "ログイン", '#', class: :navi_btn %>
+              <%= link_to "ログイン", new_user_session_path, class: :navi_btn %>
               <%= link_to "新規登録", new_user_registration_path, class: :navi_btn %>
             </div>
           <% end %>
