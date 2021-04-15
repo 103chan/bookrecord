@@ -1,5 +1,4 @@
 /* ヘッダー */
-
 .header {
   background-color: #89c3eb;
   margin-bottom: 48px;
@@ -33,6 +32,7 @@
 .navi_btn {
   display:inline-block;
   padding: 6px 24px;
+  font-family: Hiragino Maru Gothic Pro;
   font-size: 12px;
   color: black;
   text-decoration: none;
@@ -40,4 +40,55 @@
   border: 1px solid black;
   border-radius: 3px;
   transition: 0.4s ease;
+}
+
+.form_user {
+  font-family: Hiragino Maru Gothic Pro;
+  color: black;
+  text-decoration: none;
+}
+
+.navi_btn:hover{
+  color: black;
+  background: white;
+}
+
+/* フォーム周辺　*/
+.form_wrapping {
+  min-height: calc(100vh -160px);
+}
+
+.field {
+  margin: 10px 0;
+  font-family: Hiragino Maru Gothic Pro;
+}
+
+.actions {
+  margin-bottom: 40px;
+}
+
+.form_btn {
+  display:inline-block;
+  padding: 6px 24px;
+  font-family: Hiragino Maru Gothic Pro;
+  font-size: 12px;
+  color: black;
+  text-decoration: none;
+  user-select: none;
+  background: #89c3eb;
+  border: 1px solid black;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+
+.form_btn:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+/* メイン */
+.page-heading {
+  font-family: Hiragino Maru Gothic Pro;
+  font-size: 30px;
+  margin-bottom: 20px;
 }
