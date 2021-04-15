@@ -8,10 +8,10 @@
 
 ### Association
 
-- has_many :booklogs
+- has_many :bookrecords
 - has_many :comments
 
-## booklogsテーブル
+## bookrecordsテーブル
 
 | Column        | Type        | Options      |
 | ------------- | ----------- | ------------ |
@@ -33,9 +33,9 @@
 | ------------- | ----------- | ------------ |
 | text          | text        | null: false  |
 | user          | references  |              |
-| booklog       | references  |              |
+| bookrecord    | references  |              |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :booklog
+- belongs_to :bookrecord
