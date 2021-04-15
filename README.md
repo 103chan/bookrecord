@@ -1,26 +1,26 @@
 ## usersテーブル
 
-| Column        | Type        | Options      |
-| ------------- | ----------- | -------------|
-| nickname      | string      | null: false  |
-| email         | string      | null: false  |
-| password      | string      | null: false  |
+| Column        | Type        | Options                       |
+| ------------- | ----------- | ----------------------------- |
+| nickname      | string      | null: false                   |
+| email         | string      | null: false                   |
+| password      | string      | null: false                   |
 
 ### Association
 
-- has_many :bookrecords
+- has_many :bookrecorders
 - has_many :comments
 
-## bookrecordsテーブル
+## bookrecordersテーブル
 
-| Column        | Type        | Options      |
-| ------------- | ----------- | ------------ |
-| author        | string      | null: false  |
-| reading_date  | string      |              |
-| genre_id      | integer     | null: false  |
-| recommend_id  | integer     | null: false  |
-| impression    | text        | null: false  |
-| user          | references  | null: false  |
+| Column        | Type        | Options                       |
+| ------------- | ----------- | ----------------------------- |
+| author        | string      | null: false                   |
+| reading_date  | string      |                               |
+| genre_id      | integer     | null: false                   |
+| recommend_id  | integer     | null: false                   |
+| impression    | text        | null: false                   |
+| user          | references  | null: false foreign_key: true |
 
 ### Association
 
@@ -29,13 +29,13 @@
 
 ## commentsテーブル
 
-| Column        | Type        | Options      |
-| ------------- | ----------- | ------------ |
-| text          | text        | null: false  |
-| user          | references  |              |
-| bookrecord    | references  |              |
+| Column        | Type        | Options                       |
+| ------------- | ----------- | ----------------------------- |
+| text          | text        | null: false                   |
+| user          | references  |                               |
+| bookrecorder  | references  |                               |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :bookrecord
+- belongs_to :bookrecorder
