@@ -1,2 +1,3 @@
-class Bookrecorder < ApplicationRecord
+class Bookrecorder < ApplicationRecor
+  belongs_to :user
 end
