@@ -1,24 +1,41 @@
-# README
+## usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column        | Type        | Options      |
+| ------------- | ----------- | -------------|
+| nickname      | string      | null: false  |
+| email         | string      | null: false  |
+| password      | string      | null: false  |
 
-Things you may want to cover:
+### Association
 
-* Ruby version
+- has_many :booklogs
+- has_many :comments
 
-* System dependencies
+## booklogsテーブル
 
-* Configuration
+| Column        | Type        | Options      |
+| ------------- | ----------- | ------------ |
+| author        | string      | null: false  |
+| reading_date  | string      |              |
+| genre_id      | integer     | null: false  |
+| recommend_id  | integer     | null: false  |
+| impression    | text        | null: false  |
+| user          | references  | null: false  |
 
-* Database creation
+### Association
 
-* Database initialization
+- belongs_to :user
+- has_many :comments
 
-* How to run the test suite
+## commentsテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+| Column        | Type        | Options      |
+| ------------- | ----------- | ------------ |
+| text          | text        | null: false  |
+| user          | references  |              |
+| booklog       | references  |              |
 
-* Deployment instructions
+### Association
 
-* ...
+- belongs_to :user
+- belongs_to :booklog
