@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookrecord</title>
+    <title>BookRecord</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header class="header">
+      <div class="inner">
+        <div class="navi">
+          <div class="navi_left">
+            <%= link_to "BookRecord", root_path, class: :title %>
+          </div>
+          <div class="navi_center">
+            <p>あなたの読書記録をゆるく公開しましょう<br>　　読書で教養を深めていきましょう</p>
+          </div>
+          <div class="navi_right">
+            <%= link_to "ログイン", '#', class: :navi_btn %>
+            <%= link_to "新規登録", '#', class: :navi_btn %>
+          </div>
+        </div>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
