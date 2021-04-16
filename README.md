@@ -1,4 +1,40 @@
-## usersテーブル
+## アプリケーション名
+  BookRecord
+  
+## 概要
+  1 画像の投稿と紹介文の投稿
+  2 コメントの投稿
+  3 ユーザー情報の登録・編集・削除
+  4 投稿した情報の編集・削除
+  
+## 制作背景
+  ### 制作意図
+  　webアプリケーションの作成の基礎固めとして作成
+  
+  ### ペルソナ
+  　３０代男性　職業は問わず、残業もあり忙しくしている。将来、管理職になることを志しており、
+  　これまで流し読みをしていた本の履歴を管理したいと考えている。
+  　また、他の人がどのような本を読んでいるかを知り、新たな読書の参考にしたいと考えている。
+  
+  ### ユーザーの課題
+  　時間の確保に苦労しているため、なるべく簡単に管理ができるようにしたい。
+    他の人がどのような本を読んでいるかを知り、新たな知識を吸収したい。
+  
+## 課題解決
+　なるべくシンプルな機能で、多くの方の読書履歴を知ることが出来るようにする。
+  ユーザーページへ遷移できる機能を有する。
+  読んだ本のオススメ度を知ることが出来る。
+  写真を投稿する機能を有することにより、本の表紙でどの本なのか、わかるようにする。
+    
+## 必要機能
+　ユーザー管理機能
+　画像投稿機能
+　コメント機能
+　検索機能
+ 
+## DB設計
+    
+### usersテーブル
 
 | Column        | Type        | Options                       |
 | ------------- | ----------- | ----------------------------- |
@@ -6,12 +42,12 @@
 | email         | string      | null: false                   |
 | password      | string      | null: false                   |
 
-### Association
+#### Association
 
 - has_many :bookrecorders
 - has_many :comments
 
-## bookrecordersテーブル
+### bookrecordersテーブル
 
 | Column        | Type        | Options                       |
 | ------------- | ----------- | ----------------------------- |
@@ -22,12 +58,12 @@
 | impression    | text        | null: false                   |
 | user          | references  | null: false foreign_key: true |
 
-### Association
+#### Association
 
 - belongs_to :user
 - has_many :comments
 
-## commentsテーブル
+### commentsテーブル
 
 | Column        | Type        | Options                       |
 | ------------- | ----------- | ----------------------------- |
@@ -35,7 +71,7 @@
 | user          | references  |                               |
 | bookrecorder  | references  |                               |
 
-### Association
+#### Association
 
 - belongs_to :user
 - belongs_to :bookrecorder
